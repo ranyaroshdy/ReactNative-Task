@@ -6,6 +6,15 @@ import { Feather } from "@expo/vector-icons";
 import { hideAsync } from "expo-splash-screen";
 
 import Navigation from "./navigation";
+import { decode, encode } from "base-64";
+
+if (!global.btoa) {
+  global.btoa = encode;
+}
+
+if (!global.atob) {
+  global.atob = decode;
+}
 
 export default function App() {
   React.useEffect(() => {
