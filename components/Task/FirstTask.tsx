@@ -34,7 +34,13 @@ export default () => {
         accessibilityStates
         title={'4. You need to create firestore collection named "product"'}
         titleNumberOfLines={2}
-        description="Every document will have 4 fields (description, price, name, image)"
+        descriptionNumberOfLines={2}
+        description="Every document will have 4 fields (description, price, name, image, categoryId => (reference type for category))"
+      />
+      <List.Item
+        accessibilityStates
+        title={"5. go to settings create web project then copy config paste it into firebase.ts"}
+        titleNumberOfLines={2}
       />
       <View>
         <Button
