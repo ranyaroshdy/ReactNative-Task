@@ -11,4 +11,4 @@
 6. scan qr code that opens in your broweser
 7. solve the tasks
 8. run `stash='git stash create'; git archive --format=zip -v --output=../${PWD##*/}.zip $stashName`
-9. send zipped file
+9. email zipped file to `muhammad.saeed@expandcart.com`
