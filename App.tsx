@@ -5,7 +5,7 @@ import { Provider as PaperProvider } from "react-native-paper";
 import { Feather } from "@expo/vector-icons";
 import { hideAsync } from "expo-splash-screen";
 
-import Navigation from "./navigation";
+import Navigation from "./src/navigation";
 import { decode, encode } from "base-64";
 
 if (!global.btoa) {

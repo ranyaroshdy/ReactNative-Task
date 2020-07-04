@@ -3,13 +3,13 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import { createStackNavigator } from "@react-navigation/stack";
 import * as React from "react";
 
-import TabOneScreen from "../screens/HomeScreen";
+import TabOneScreen from "../../screens/HomeScreen";
 import CategoriesScreen from "../screens/CategoriesScreen";
 import {
   BottomTabParamList,
   HomeParamList,
   CategoriesParamList,
-} from "../types";
+} from "../../types";
 import { Appbar } from "react-native-paper";
 
 const BottomTab = createMaterialBottomTabNavigator<BottomTabParamList>();
@@ -37,13 +37,14 @@ export default function BottomTabNavigator() {
           ),
         }}
       />
+
     </BottomTab.Navigator>
   );
 }
 
 const HomeStack = createStackNavigator<HomeParamList>();
 
-function HomeNavigator() {
+function HomeNavigator({ navigation }: any) {
   return (
     <HomeStack.Navigator>
       <HomeStack.Screen
@@ -53,7 +54,7 @@ function HomeNavigator() {
           header: () => (
             <Appbar.Header accessibilityStates>
               <Appbar.Content accessibilityStates title="Home" />
-              <Appbar.Action accessibilityStates icon="shopping-cart" />
+              <Appbar.Action accessibilityStates icon="shopping-cart" onPress={() => { navigation.navigate('Cart') }} />
             </Appbar.Header>
           ),
         }}
@@ -64,7 +65,7 @@ function HomeNavigator() {
 
 const CategoriesStack = createStackNavigator<CategoriesParamList>();
 
-function CategoriesNavigator() {
+function CategoriesNavigator({ navigation }: any) {
   return (
     <CategoriesStack.Navigator>
       <CategoriesStack.Screen
@@ -74,7 +75,7 @@ function CategoriesNavigator() {
           header: () => (
             <Appbar.Header accessibilityStates>
               <Appbar.Content accessibilityStates title="Categories" />
-              <Appbar.Action accessibilityStates icon="shopping-cart" />
+              <Appbar.Action accessibilityStates icon="shopping-cart" onPress={() => { navigation.navigate('Cart') }} />
             </Appbar.Header>
           ),
         }}
